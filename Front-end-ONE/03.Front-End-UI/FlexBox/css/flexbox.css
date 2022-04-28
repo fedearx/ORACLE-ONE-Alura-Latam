@@ -36,3 +36,13 @@
   height: 250px;      /* para que delimite lñas columnas a una altura especifica */
   flex-wrap: wrap;    /* cuando llega a 250p`x quiebra hacia la proxima columna */
 }
+
+.contenidoPrincipal-cursos {
+  display: flex;
+  flex-wrap: wrap;          /* para que salte de linea */
+}
+
+.contenidoPrincipal-cursos-link {
+  display: flex;
+  width: 23%;         /* porque quiero 4 elementos y estos seria el 100% */
+}
