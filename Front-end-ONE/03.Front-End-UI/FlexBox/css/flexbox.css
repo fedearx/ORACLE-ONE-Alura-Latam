@@ -46,3 +46,20 @@
   display: flex;
   width: 23%;         /* porque quiero 4 elementos y estos seria el 100% */
 }
+
+.videoSobre .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* responsive */
+
+.headerPrincipal .container {
+  flex-direction: column;
+  align-items: initial;
+  text-align: center;
+}
+
+.headerPrincipal-nav {
+  flex-direction: column;
+}
