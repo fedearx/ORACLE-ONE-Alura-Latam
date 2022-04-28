@@ -1,0 +1,17 @@
+.menu__link {
+  /* en oprden alfabetico */
+  color: #808080;             /* color de letra */
+  margin-right: 1.25rem;
+  text-decoration: none;        /* asi no tiene la rayita debajo */
+  text-transform: lowercase;    /* todo a minusculas */
+
+}
+
+.menu__link.activo {
+  color: #333;
+  font-weight: bold;             /* en negritas */
+}
+
+.menu__link:hover {
+  text-decoration: underline;     /* subrayado */
+}
