@@ -18,6 +18,13 @@
   }
 
   /* populares */
-  
+  .populares__contenido {
+    flex-direction: column;
+  }
+
+  .populares__card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 
 }
