@@ -1,17 +1,25 @@
 .app {
     background: #f1f1f1;
-    
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-areas: 
+    "encabezado"
+    "contenido"
+    "rodapie";
+    grid-template-columns: auto;                /* tamaño columnas */
+    grid-template-rows: 50px 100vh auto;
 }
 
 .encabezado {
-
-    
+    background-color: #00cc99;
+    grid-area: encabezado;                          /* indico el nombre del area */
 }
 .contenido {
-
+    background-color: #ff8080;
+    grid-area: contenido;
 }
 
 .rodapie { 
-
-    
+    background-color: #0099ff;
+    grid-area: rodapie;
 }
