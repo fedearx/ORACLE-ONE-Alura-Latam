@@ -11,15 +11,12 @@
 }
 
 .encabezado {
-    background-color: #00cc99;
     grid-area: encabezado;                          /* indico el nombre del area */
 }
 .contenido {
-    background-color: #ff8080;
     grid-area: contenido;
 }
 
 .rodapie { 
-    background-color: #0099ff;
     grid-area: rodapie;
 }
