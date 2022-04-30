@@ -52,7 +52,7 @@
 
 .populares__card___titulo {
   color: #333;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .populares__card___data {
@@ -70,9 +70,9 @@
 
 .populares__card___header {
   border-bottom: 1px solid #dcdcdc;
+/*  display: flex;
+  justify-content: space-between; */
   display: block;
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
 }
 
 .populares__boton {
