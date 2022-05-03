@@ -21,26 +21,18 @@ const createTask = (evento) => {
 
 
   const taskContent = document.createElement('div');
-  taskContent.appendChild(checkComplete());
-
   const titleTask = document.createElement('span');
   titleTask.classList.add('task');
   titleTask.innerText = value;
+  taskContent.appendChild(checkComplete());
   taskContent.appendChild(titleTask);
 
-  // backticks
-  const content = `
-  <i class="fas fa-trash-alt trashIcon icon"></i>`
   // task.innerHTML = content;         // lo copio en el html
-
   task.appendChild(taskContent);
+  task.appendChild(deleteIcon());
   // al elem list quiero agregarle un hijo
   list.appendChild(task);
-
-
-  
 }
-
 
 //  funcion normal
 // btn.addEventListener("click", function (evento) {
@@ -61,8 +53,29 @@ const completeTask = (event) => {
   element.classList.toggle('fas');              // toggle si no existe la crea, si existe la saca
   element.classList.toggle('completeIcon');    // esta en ccs y da el color azul
   element.classList.toggle('far');
+};
 
-}
+  const deleteIcon = () => {
+    // backticks
+    const i = document.createElement("i");
+    i.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
+    i.addEventListener('click', deleteTask)
+
+    return i
+  }
+
+  const deleteTask = (event) => {
+    // console.log(event.taget);
+    //console.log(event.target.parentElement);  // veo el elemento padre, que me contiene
+
+    const parent = event.target.parentElement;
+    parent.remove();
+
+  }
+
+
+
+
 
 })();     // los () la invocan inmediatamente
 
