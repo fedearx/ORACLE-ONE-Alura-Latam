@@ -1,3 +1,7 @@
+// Immediately invoked function expression IIFE
+// funciones que se declarna y ejecutan
+(() => {
+
 const btn = document.querySelector("[data-form-btn]");
 
 const createTask = (evento) => {
@@ -52,7 +56,6 @@ i.addEventListener('click', completeTask);
   return i;
 }
 
-
 const completeTask = (event) => {
   const element = event.target;
   element.classList.toggle('fas');              // toggle si no existe la crea, si existe la saca
@@ -61,7 +64,7 @@ const completeTask = (event) => {
 
 }
 
-
+})();     // los () la invocan inmediatamente
 
 
 
