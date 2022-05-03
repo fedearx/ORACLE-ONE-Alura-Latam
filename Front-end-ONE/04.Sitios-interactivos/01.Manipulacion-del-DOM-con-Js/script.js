@@ -12,17 +12,24 @@ const createTask = (evento) => {
 
   // creo un elemento
   const task = document.createElement('li');
-  task.classList.add("card");     // le agrego la clase card a li
+  task.classList.add('card');     // le agrego la clase card a li
   input.value = '';
+
+
+  const taskContent = document.createElement('div');
+  taskContent.appendChild(checkComplete());
+
+  const titleTask = document.createElement('span');
+  titleTask.classList.add('task');
+  titleTask.innerText = value;
+  taskContent.appendChild(titleTask);
+
   // backticks
   const content = `
-  <div>
-    <i class="far fa-check-square icon"></i>
-    <span class="task">${value}</span>
-  </div>
   <i class="fas fa-trash-alt trashIcon icon"></i>`
-  task.innerHTML = content;         // lo copio en el html
+  // task.innerHTML = content;         // lo copio en el html
 
+  task.appendChild(taskContent);
   // al elem list quiero agregarle un hijo
   list.appendChild(task);
 
@@ -35,3 +42,13 @@ const createTask = (evento) => {
 // btn.addEventListener("click", function (evento) {
 // funcion flecha o funcion anonima
 btn.addEventListener("click", createTask);
+
+const checkComplete = () => {
+  const i = document.createElement('i');
+  i.classList.add('far');
+  i.classList.add('fa-check-square');
+  i.classList.add('icon');
+
+  return i;
+}
+
