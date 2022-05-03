@@ -6,7 +6,13 @@ const createTask = (evento) => {
 
   const input = document.querySelector("[data-form-input]");
   const value = input.value;
-  const task = document.querySelector("[data-task]");
+
+  // elem padre donde voy a insertar el content
+  const list = document.querySelector('[data-list]');
+
+  // creo un elemento
+  const task = document.createElement('li');
+  task.classList.add("card");     // le agrego la clase card a li
   input.value = '';
   // backticks
   const content = `
@@ -17,7 +23,11 @@ const createTask = (evento) => {
   <i class="fas fa-trash-alt trashIcon icon"></i>`
   task.innerHTML = content;         // lo copio en el html
 
-  console.log(value);
+  // al elem list quiero agregarle un hijo
+  list.appendChild(task);
+
+
+  
 }
 
 
