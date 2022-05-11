@@ -50,7 +50,12 @@ const createTask = (evento) => {
     dateFormat
   };
 
-  sessionStorage.setItem("tasks", JSON.stringify(taskObj));
+  // si cierro la pesrtaña, la informacion desaparece, no persiste
+  // sessionStorage.setItem("tasks", JSON.stringify(taskObj));
+  // esti si guarda la info aunque se cierre la pestaña
+  // localStorage.setItem(llave, valor);
+  //  solo se almacena la ultima tarea que estoy registrando
+  localStorage.setItem("tasks", JSON.stringify(taskObj));
 
 
   const titleTask = document.createElement('span');
