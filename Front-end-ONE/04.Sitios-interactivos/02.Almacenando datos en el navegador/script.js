@@ -7,6 +7,19 @@ import deleteIcon from "./component/deleteIcon.js";
 
 const btn = document.querySelector("[data-form-btn]");
 
+const addTask = (evento) => {
+  // elem padre donde voy a insertar el content
+  const list = document.querySelector('[data-list]');
+  const task = createTask(evento);
+  // al elem list quiero agregarle un hijo
+  list.appendChild(task);
+}
+
+
+
+
+
+
 const createTask = (evento) => {
 
   evento.preventDefault();          // detiene el funcionamiento por defecto
@@ -20,8 +33,7 @@ const createTask = (evento) => {
   // console.log(dateFormat);
 
 
-  // elem padre donde voy a insertar el content
-  const list = document.querySelector('[data-list]');
+
 
   // creo un elemento
   const task = document.createElement('li');
@@ -35,18 +47,23 @@ const createTask = (evento) => {
   titleTask.innerText = value;
   taskContent.appendChild(checkComplete());
   taskContent.appendChild(titleTask);
-
   // task.innerHTML = content;         // lo copio en el html
+
+  const dateElement = document.createElement("span");   // la etiqueta que vamos a crear
+  dateElement.innerHTML = dateFormat                    // creo la linea del contenido
+
   task.appendChild(taskContent);
+  task.appendChild(dateElement);            // escribo el elemento en la pagina
   task.appendChild(deleteIcon());
-  // al elem list quiero agregarle un hijo
-  list.appendChild(task);
+
+  return task;
+
 }
 
 //  funcion normal
 // btn.addEventListener("click", function (evento) {
 // funcion flecha o funcion anonima
-btn.addEventListener("click", createTask);
+btn.addEventListener("click", addTask);       // cuando se hace click se agrega la tarea
 
 //})();     // los () la invocan inmediatamente
 
