@@ -16,8 +16,8 @@ const createTask = (evento) => {
 
   const calendar = document.querySelector('[data-form-date]');
   const date = calendar.value;
-  console.log(date);
-
+  const dateFormat = moment(date).format("DD/MM/YYYY");
+  // console.log(dateFormat);
 
 
   // elem padre donde voy a insertar el content
