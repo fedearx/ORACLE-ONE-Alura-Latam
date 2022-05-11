@@ -14,6 +14,12 @@ const createTask = (evento) => {
   const input = document.querySelector("[data-form-input]");
   const value = input.value;
 
+  const calendar = document.querySelector('[data-form-date]');
+  const date = calendar.value;
+  console.log(date);
+
+
+
   // elem padre donde voy a insertar el content
   const list = document.querySelector('[data-list]');
 
