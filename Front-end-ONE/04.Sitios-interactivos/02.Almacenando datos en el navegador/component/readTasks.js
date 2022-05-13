@@ -7,6 +7,8 @@ import dateElement from "./dateElement.js";
 // quiero leer lo que ya tengo en el LocalStorage
 export const displayTasks = () => {
 
+    // console.log(uuid.v4());             // veo el uuid
+
     const list = document.querySelector("[data-list]");  // lista donde queremos agregar nuestras listas ya almacenadas
 
     // nos devolveria un objeto JSON
