@@ -35,7 +35,7 @@ export const addTask = (evento) => {
     // esti si guarda la info aunque se cierre la pestaña
     // localStorage.setItem(llave, valor);
     //  solo se almacena la ultima tarea que estoy registrando
-    localStorage.setItem("tasks", JSON.stringify(taskList));
+    localStorage.setItem("tasks", JSON.stringify(taskList));   // lo convierte a formato JSON
 
     const task = createTask(taskObj);
     // al elem list quiero agregarle un hijo
@@ -43,26 +43,26 @@ export const addTask = (evento) => {
   }
   
   // con {le indicamos los valores que vamos a recibir}
-  const createTask = ({value, dateFormat}) => {
+  export const createTask = ({ value, dateFormat }) => {
       // creo un elemento
     const task = document.createElement('li');
-    task.classList.add('card');     // le agrego la clase card a li
+            task.classList.add('card');     // le agrego la clase card a li
 
     const taskContent = document.createElement('div');
 
     const titleTask = document.createElement('span');
-    titleTask.classList.add('task');
-    titleTask.innerText = value;
-    taskContent.appendChild(checkComplete());
-    taskContent.appendChild(titleTask);
+            titleTask.classList.add('task');
+            titleTask.innerText = value;
+            taskContent.appendChild(checkComplete());
+            taskContent.appendChild(titleTask);
     // task.innerHTML = content;         // lo copio en el html
   
     const dateElement = document.createElement("span");   // la etiqueta que vamos a crear
-    dateElement.innerHTML = dateFormat                    // creo la linea del contenido
-  
-    task.appendChild(taskContent);
-    task.appendChild(dateElement);            // escribo el elemento en la pagina
-    task.appendChild(deleteIcon());
+            dateElement.innerHTML = dateFormat                    // creo la linea del contenido
+            
+            task.appendChild(taskContent);
+            task.appendChild(dateElement);            // escribo el elemento en la pagina
+            task.appendChild(deleteIcon());
   
     return task;
   
