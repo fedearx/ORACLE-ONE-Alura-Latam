@@ -1,7 +1,7 @@
 // importo el modulo para escribir en l apagina
 
 import { createTask } from "./addTask.js";
-import { uniqueDates } from "../services/date.js";
+import { uniqueDates, orderDates } from "../services/date.js";
 import dateElement from "./dateElement.js";
 
 // quiero leer lo que ya tengo en el LocalStorage
@@ -16,6 +16,8 @@ export const displayTasks = () => {
     // console.log(taskList);
 
     const dates = uniqueDates(taskList);
+    const order = orderDates(dates);
+//    console.log(order);
 
 //    console.log(dates);
 
