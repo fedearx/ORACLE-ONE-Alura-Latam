@@ -13,7 +13,15 @@ export const addTask = (evento) => {
     const date = calendar.value;
     const dateFormat = moment(date).format("DD/MM/YYYY");
     // console.log(dateFormat);
-   
+
+    if ( value === "" || date === "") {
+        //console.log("No crear la tarea");
+        return                          // regresa y no continua ejecutabndo el codigo que sigue
+    }
+
+
+
+
     // inicializo los datos, despues de ingresar algo
     input.value = '';
     calendar.value = '';    
@@ -59,7 +67,7 @@ export const addTask = (evento) => {
   
     const dateElement = document.createElement("span");   // la etiqueta que vamos a crear
             dateElement.innerHTML = dateFormat                    // creo la linea del contenido
-            
+
             task.appendChild(taskContent);
             task.appendChild(dateElement);            // escribo el elemento en la pagina
             task.appendChild(deleteIcon());

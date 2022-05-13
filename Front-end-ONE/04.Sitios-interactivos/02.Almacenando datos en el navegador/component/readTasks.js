@@ -1,5 +1,6 @@
 // importo el modulo para escribir en l apagina
 import { createTask } from "./addTask.js";
+import dateElement from "./dateElement.js";
 
 // quiero leer lo que ya tengo en el LocalStorage
 export const readTasks = () => {
@@ -14,6 +15,7 @@ export const readTasks = () => {
 
     // recoerremos lo guardado
     taskList.forEach((task) => {
+        list.appendChild(dateElement(task.dateFormat));
         list.appendChild(createTask(task));  // createtask recibe cada uno de los elem que tenemos almacenados
     });
 }
