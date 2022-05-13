@@ -1,5 +1,5 @@
 import { addTask } from "./component/addTask.js";
-import { readTasks } from "./component/readTasks.js";
+import { displayTasks } from "./component/readTasks.js";
 
 // Immediately invoked function expression IIFE
 // funciones que se declarna y ejecutan
@@ -15,5 +15,5 @@ btn.addEventListener('click', addTask);       // cuando se hace click se agrega 
 
 //})();     // los () la invocan inmediatamente
 
-readTasks();   // simplemente la llamo, no le envio nada
+displayTasks();   // simplemente la llamo, no le envio nada
 

@@ -1,5 +1,6 @@
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
+import { displayTasks } from "./readTasks.js";
 
 export const addTask = (evento) => {
     evento.preventDefault();          // detiene el funcionamiento por defecto
@@ -31,7 +32,10 @@ export const addTask = (evento) => {
         value,
         // dateFormat: dateFormat
         dateFormat,
-    };    
+    };
+
+    // lo incializo a vacio
+    list.innerHTML = "";
 
     const taskList = JSON.parse(localStorage.getItem('tasks')) || [];   // || indica qsi lo que esta adelante es nulo, le da un valor por defecto
 
@@ -45,10 +49,12 @@ export const addTask = (evento) => {
     //  solo se almacena la ultima tarea que estoy registrando
     localStorage.setItem("tasks", JSON.stringify(taskList));   // lo convierte a formato JSON
 
-    const task = createTask(taskObj);
-    // al elem list quiero agregarle un hijo
-    list.appendChild(task);
-  }
+    displayTasks();        // para que la ordene
+
+//    const task = createTask(taskObj);
+//    // al elem list quiero agregarle un hijo
+//    list.appendChild(task);
+  };
   
   // con {le indicamos los valores que vamos a recibir}
   export const createTask = ({ value, dateFormat }) => {

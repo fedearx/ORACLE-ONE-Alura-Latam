@@ -5,7 +5,7 @@ import { uniqueDates } from "../services/date.js";
 import dateElement from "./dateElement.js";
 
 // quiero leer lo que ya tengo en el LocalStorage
-export const readTasks = () => {
+export const displayTasks = () => {
 
     const list = document.querySelector("[data-list]");  // lista donde queremos agregar nuestras listas ya almacenadas
 
@@ -17,17 +17,28 @@ export const readTasks = () => {
 
     const dates = uniqueDates(taskList);
 
-    console.log(dates);
+//    console.log(dates);
 
     dates.forEach( date => {
-        console.log(date);
+        //console.log(date);
+        const dateMoment = moment(date, "DD/MM/YYYY");
+        // console.log(dateMoment);
+        list.appendChild(dateElement(date));
+        // recoerremos lo guardado
+        taskList.forEach((task) => {
+            const taskDate = moment(task.dateFormat, "DD/MM/YYYY");
+            //console.log(taskDate);
+
+            const diff = dateMoment.diff(taskDate);
+//            console.log(diff);
+            if ( diff === 0 ) {
+                // list.appendChild(dateElement(task.dateFormat));
+                list.appendChild(createTask(task));  // createtask recibe cada uno de los elem que tenemos almacenados
+            }
+        });
     });
 
 
 
-    // recoerremos lo guardado
-    taskList.forEach((task) => {
-        list.appendChild(dateElement(task.dateFormat));
-        list.appendChild(createTask(task));  // createtask recibe cada uno de los elem que tenemos almacenados
-    });
+
 }
