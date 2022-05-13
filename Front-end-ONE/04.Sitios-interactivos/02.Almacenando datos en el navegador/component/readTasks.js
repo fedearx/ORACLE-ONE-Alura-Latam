@@ -1,5 +1,7 @@
 // importo el modulo para escribir en l apagina
+
 import { createTask } from "./addTask.js";
+import { uniqueDates } from "../services/date.js";
 import dateElement from "./dateElement.js";
 
 // quiero leer lo que ya tengo en el LocalStorage
@@ -12,6 +14,16 @@ export const readTasks = () => {
     // entonces lo convertimos en un objeto de js
     const taskList = JSON.parse(localStorage.getItem("tasks")) || [];  // por si viene nulo le asignamos un array vacio
     // console.log(taskList);
+
+    const dates = uniqueDates(taskList);
+
+    console.log(dates);
+
+    dates.forEach( date => {
+        console.log(date);
+    });
+
+
 
     // recoerremos lo guardado
     taskList.forEach((task) => {
