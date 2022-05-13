@@ -90,7 +90,7 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
 
             task.appendChild(taskContent);
             task.appendChild(dateElement);            // escribo el elemento en la pagina
-            task.appendChild(deleteIcon());
+            task.appendChild(deleteIcon(id));
   
     return task;
   
