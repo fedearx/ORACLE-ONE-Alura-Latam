@@ -15,8 +15,8 @@ const addTask = (evento) => {
   list.appendChild(task);
 }
 
-
-
+// creo un array
+const taskList = [];
 
 
 
@@ -47,15 +47,21 @@ const createTask = (evento) => {
     // value: value,
     value,
     // dateFormat: dateFormat
-    dateFormat
+    dateFormat,
   };
+
+  taskList.push(taskObj);             // le añado taskObj al array
+
+
+
+
 
   // si cierro la pesrtaña, la informacion desaparece, no persiste
   // sessionStorage.setItem("tasks", JSON.stringify(taskObj));
   // esti si guarda la info aunque se cierre la pestaña
   // localStorage.setItem(llave, valor);
   //  solo se almacena la ultima tarea que estoy registrando
-  localStorage.setItem("tasks", JSON.stringify(taskObj));
+  localStorage.setItem("tasks", JSON.stringify(taskList));
 
 
   const titleTask = document.createElement('span');
